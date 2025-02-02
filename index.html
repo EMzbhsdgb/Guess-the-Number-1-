@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivina el Número</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div class="game-container">
+      <h1>🎮 Adivina el Número 🎮</h1>
+      <p>¡Intenta adivinar el número secreto! Tienes intentos infinitos, pero cuidado: si te equivocas, ¡te lo diremos!</p>
+      <div class="input-container">
+        <input type="number" v-model="userGuess" placeholder="Ingresa tu número" @keyup.enter="checkGuess">
+        <button @click="checkGuess">Adivinar</button>
+      </div>
+      <p v-if="message" :class="messageClass">{{ message }}</p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
